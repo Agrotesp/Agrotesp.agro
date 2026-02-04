@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - AGROTESP</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Crimson+Pro:wght@600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("2jTeGSLsJ3gvQxhQ8");
+        })();
+    </script>
+</head>
+<body>
+    <!-- Navigation Toggle -->
+    <button class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Side Navigation -->
+    <nav class="side-nav" id="sideNav">
+        <div class="nav-header">
+            <div class="nav-logo">AGROTESP</div>
+            <div class="nav-tagline">Pulverização com Drones</div>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Início</a></li>
+            <li><a href="quem-somos.html" class="nav-link">Quem Somos</a></li>
+            <li><a href="servicos.html" class="nav-link">Nossos Serviços</a></li>
+            <li><a href="tecnologia.html" class="nav-link">Tecnologia</a></li>
+            <li><a href="faq.html" class="nav-link">Perguntas Frequentes</a></li>
+            <li><a href="contato.html" class="nav-link active">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- CONTATO PAGE -->
+    <div class="page active">
+        <section class="content-section">
+            <div class="section-header">
+                <div class="section-tag">Fale Conosco</div>
+                <h2 class="section-title">Entre em Contato</h2>
+                <p class="section-subtitle">Estamos prontos para atender você e levar tecnologia para sua lavoura</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">📱</div>
+                        <h3>WhatsApp</h3>
+                        <p class="contact-value">(79) 99873-7632</p>
+                        <p class="contact-description">Atendimento rápido e direto</p>
+                        <a href="https://wa.me/5579998737632" target="_blank" class="btn btn-primary" style="margin-top: 16px;">Chamar no WhatsApp</a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <h3>Telefone</h3>
+                        <p class="contact-value">(79) 99873-7632</p>
+                        <p class="contact-description">Ligação direta</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">✉️</div>
+                        <h3>E-mail</h3>
+                        <p class="contact-value">contato@agrotesp.com</p>
+                        <p class="contact-description">Envie sua mensagem</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3>Localização</h3>
+                        <p class="contact-value">Aracaju - SE</p>
+                        <p class="contact-description">Atendemos diversas regiões</p>
+                    </div>
+                </div>
+
+              <div class="contact-form-container">
+                    <h3 style="margin-bottom: 24px; color: var(--primary);">Solicite um Orçamento</h3>
+                    
+                    <!-- FORMULÁRIO INTEGRADO COM EMAILJS -->
+                  <form 
+                        id="contactForm" 
+                        onsubmit="submitToGoogleForms(event); return false;">
+                        
+                        <div class="form-group">
+                            <label class="form-label">Nome Completo *</label>
+                            <input type="text" id="nome" name="nome" class="form-input" required placeholder="Seu nome">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">WhatsApp / Telefone *</label>
+                            <input type="tel" id="telefone" name="telefone" class="form-input" required placeholder="(00) 00000-0000">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">E-mail</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="seu@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Cidade / Propriedade *</label>
+                            <input type="text" id="cidade" name="cidade" class="form-input" required placeholder="Cidade ou nome da fazenda">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Tamanho da Área (hectares) *</label>
+                            <input type="text" id="area" name="area" class="form-input" required placeholder="Ex: 50">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Tipo de Cultura *</label>
+                            <select id="cultura" name="cultura" class="form-select" required>
+                                <option value="">Selecione</option>
+                                <option value="Soja">Soja</option>
+                                <option value="Milho">Milho</option>
+                                <option value="Café">Café</option>
+                                <option value="Cana-de-açúcar">Cana-de-açúcar</option>
+                                <option value="Algodão">Algodão</option>
+                                <option value="Pastagem">Pastagem</option>
+                                <option value="Outra">Outra</option>
+                            </select>
+                        </div>
+                
+                        <div class="form-group">
+                            <label class="form-label">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" class="form-textarea" placeholder="Conte-nos mais sobre sua necessidade..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-submit">Enviar Solicitação</button>
+                    </form>
+                </div>
+                
+            <div class="info-box" style="margin-top: 60px;">
+                <div class="info-box-content">
+                    <h3>Horário de Atendimento</h3>
+                    <p><strong>Segunda a Sexta:</strong> 7h às 18h<br>
+                    <strong>Sábado:</strong> 7h às 12h<br>
+                    <strong>Domingo e Feriados:</strong> WhatsApp para emergências</p>
+                    <p style="margin-top: 20px;">Respondemos todas as solicitações em até 24 horas. Para atendimento urgente, contate-nos via WhatsApp!</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="AGROTESP.png" alt="AGROTESP Logo" class="footer-logo-img">
+                <div class="footer-logo">AGROTESP</div>
+                <p>Pulverização agrícola profissional com drones. Tecnologia, eficiência e resultados para sua lavoura.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" title="Facebook">📘</a>
+                    <a href="#" class="social-link" title="Instagram">📸</a>
+                    <a href="#" class="social-link" title="YouTube">▶️</a>
+                    <a href="#" class="social-link" title="WhatsApp">💬</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Navegação</h4>
+                <a href="index.html">Início</a>
+                <a href="quem-somos.html">Quem Somos</a>
+                <a href="servicos.html">Serviços</a>
+                <a href="tecnologia.html">Tecnologia</a>
+                <a href="faq.html">Perguntas Frequentes</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <p>WhatsApp: (79) 99873-7632</p>
+                <p>Telefone: (79) 99873-7632</p>
+                <p>E-mail: contato@agrotesp.com</p>
+                <p>Aracaju - SE</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Atendimento</h4>
+                <p>Segunda a Sexta: 7h às 18h</p>
+                <p>Sábado: 7h às 12h</p>
+                <p style="margin-top: 16px; color: var(--accent); font-weight: 600;">Orçamento Gratuito</p>
+                <a href="contato.html" class="btn btn-primary" style="margin-top: 12px; display: inline-block;">Solicitar Orçamento</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 AGROTESP - Pulverização com Drones. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <!-- Script de integração com EmailJS -->
+    <script>
+        async function submitToGoogleForms(event) {
+            event.preventDefault();
+            
+            const form = document.getElementById('contactForm');
+            const submitBtn = form.querySelector('.btn-submit');
+            const originalText = submitBtn.textContent;
+            
+            // Desabilita o botão e mostra feedback
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando...';
+            
+            try {
+                // Envia via EmailJS
+                await emailjs.sendForm('AGROTESP', 'template_fixgg33', form);
+                
+                // Mensagem de sucesso
+                alert('✅ Solicitação enviada com sucesso!\n\nEntraremos em contato em breve pelo WhatsApp ou telefone informado.');
+                
+                // Limpa o formulário
+                form.reset();
+                
+            } catch (error) {
+                console.error('Erro:', error);
+                alert('❌ Erro ao enviar solicitação. Por favor, tente novamente ou entre em contato pelo WhatsApp.');
+            } finally {
+                // Reabilita o botão
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        }
+    </script>
+</body>
+</html>
